@@ -49,7 +49,7 @@ const {ratingselected} = UserHook()
             <div className="relative">
               <div className="relative">
                 <Image
-                  src={`/productos/${dataproductsforid && dataproductsforid.producto.image}`}
+                  src={`/productos/${dataproductsforid && dataproductsforid.producto.image}.webp`}
                   height={400}
                   width={213}
                   className="border-[4px] border-black z-20 relative"

@@ -90,7 +90,7 @@ export default function Header({ clickHeader }) {
             <div key={index}   className="flex justify-between"> 
            <div className="relative">
                 <Image
-                  src={`/productos/${item.productos.image}`}
+                  src={`/productos/${item.productos.image}.webp`}
                   height={200}
                   width={63}
                   className="border-[4px] border-black z-20 relative"

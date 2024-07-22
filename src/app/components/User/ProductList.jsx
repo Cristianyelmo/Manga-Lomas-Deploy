@@ -41,7 +41,7 @@ const {ratingselected} =  UserHook()
             <div  className="grid grid-cols-7 gap-10 text-black" key={index}>
               <div className="relative">
                 <Image
-                  src={`/productos/${item.productos.image}`}
+                  src={`/productos/${item.productos.image}.webp`}
                   height={300}
                   width={113}
                   className="border-[4px] border-black z-20 relative"
