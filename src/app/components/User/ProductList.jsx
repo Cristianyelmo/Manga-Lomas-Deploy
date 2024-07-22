@@ -16,7 +16,7 @@ const {ratingselected} =  UserHook()
             className="border-black border-[3px] p-2 flex"
           >
             <option onClick={() => DateOption('Todos')}>Todos</option>
-            {datauser.fechasUnicasArray.map((fecha) => (
+            {datauser && datauser.fechasUnicasArray.map((fecha) => (
               <option key={fecha} onClick={() => DateOption(fecha)}>
                 {fecha}
               </option>
@@ -37,7 +37,7 @@ const {ratingselected} =  UserHook()
         </div>
 
         <div className="space-y-5">
-          {datauser.producto.map((item,index) => (
+          {datauser && datauser.producto.map((item,index) => (
             <div  className="grid grid-cols-7 gap-10 text-black" key={index}>
               <div className="relative">
                 <Image
@@ -87,7 +87,7 @@ const {ratingselected} =  UserHook()
         
 
         <div className="space-y-5">
-          {datauser.producto.map((item,index) => (
+          {datauser && datauser.producto.map((item,index) => (
             <div key={index}   className="grid grid-cols-1 gap-2 justify-items-center border-black border-[2px] p-4 text-black" >
               <div className="relative">
                 <Image
