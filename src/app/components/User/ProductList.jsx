@@ -37,7 +37,7 @@ const {ratingselected} =  UserHook()
         </div>
 
         <div className="space-y-5">
-          {datauser.producto.map((item) => (
+          {datauser.producto.map((item,index) => (
             <div  className="grid grid-cols-7 gap-10 text-black" key={index}>
               <div className="relative">
                 <Image
