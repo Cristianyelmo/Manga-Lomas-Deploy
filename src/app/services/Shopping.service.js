@@ -1,4 +1,4 @@
-const url = "http://localhost:3000/api/";
+const url = "https://manga-lomas-deploy.vercel.app/api/";
 
 export const GetShoppingCart = async () => {
   const response = await fetch(`${url}/ShoppingCart`);
@@ -8,7 +8,7 @@ export const GetShoppingCart = async () => {
 };
 
 export const ShoppingCartAddLess = async (id, ObjectCart) => {
-  const response = await fetch(`${url}/ShoppingCart/${id}`, {
+  const response = await fetch(`${url}ShoppingCart/${id}`, {
     method: "PUT",
     headers: {
       "Content-Type": "application/json",
