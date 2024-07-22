@@ -12,3 +12,71 @@ datasource db {
   provider = "postgresql"
   url      = env("DATABASE_URL")
 }
+
+
+
+model Calificacion {
+  id           Int       @id @default(autoincrement())
+  calificacion Int
+  comentario   String
+  id_compra    Int       @default(autoincrement())
+  id_producto  Int       @default(autoincrement())
+  id_usuario   Int       @default(autoincrement())
+  compras      compras   @relation(fields: [id_compra], references: [id], onDelete: NoAction, onUpdate: NoAction)
+  productos    productos @relation(fields: [id_producto], references: [id], onDelete: NoAction, onUpdate: NoAction)
+  usuario      usuario   @relation(fields: [id_usuario], references: [id], onDelete: NoAction, onUpdate: NoAction)
+}
+
+model categoria {
+  id            Int             @id @default(autoincrement())
+  nombre        String
+  productos     productos[]
+  subcategorias subcategorias[]
+}
+
+model compras {
+  id           Int            @id @default(autoincrement())
+  cantidad     Int
+  fecha        String
+  total        Int
+  id_usuario   Int            @default(autoincrement())
+  id_producto  Int            @default(autoincrement())
+  compra       Boolean
+  Calificacion Calificacion[]
+  productos    productos      @relation(fields: [id_producto], references: [id], onDelete: NoAction, onUpdate: NoAction)
+  usuario      usuario        @relation(fields: [id_usuario], references: [id], onDelete: NoAction, onUpdate: NoAction)
+}
+
+model productos {
+  id              Int            @id @default(autoincrement())
+  nombre          String
+  stock           Int
+  sipnosis        String
+  precio          Int
+  id_categoria    Int            @default(autoincrement())
+  id_subcategoria Int            @default(autoincrement())
+  image           String
+  vendidos        Int?
+  Calificacion    Calificacion[]
+  compras         compras[]
+  categoria       categoria      @relation(fields: [id_categoria], references: [id], onDelete: NoAction, onUpdate: NoAction)
+  subcategorias   subcategorias  @relation(fields: [id_subcategoria], references: [id], onDelete: NoAction, onUpdate: NoAction)
+}
+
+model subcategorias {
+  id           Int         @id @default(autoincrement())
+  nombre       String
+  id_categoria Int         @default(autoincrement())
+  productos    productos[]
+  categoria    categoria   @relation(fields: [id_categoria], references: [id], onDelete: NoAction, onUpdate: NoAction)
+}
+
+model usuario {
+  id           Int            @id @default(autoincrement())
+  nombre       String
+  password     String
+  correo       String
+  photo        String?
+  Calificacion Calificacion[]
+  compras      compras[]
+}
