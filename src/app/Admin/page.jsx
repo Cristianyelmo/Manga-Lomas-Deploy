@@ -143,7 +143,7 @@ const {  handleFilterProductChange,
         
 
         <div className="space-y-5">
-          {datasales && datasales.producto.map((item) => (
+          {datasales && datasales.producto.map((item,index) => (
             <div  className="grid grid-cols-1 gap-2 justify-items-center border-black border-[2px] p-4 text-black" key={index}>
               <div className="relative">
                 <Image
@@ -229,7 +229,7 @@ const {  handleFilterProductChange,
               </div>
 
               <div className="space-y-5">
-                {dataproducts.products.map((item, index) => (
+                {dataproducts && dataproducts.products.map((item, index) => (
                   <div
                     key={index}
                     className="grid grid-cols-6 gap-10 text-black "
@@ -262,7 +262,7 @@ const {  handleFilterProductChange,
         
 
         <div className="space-y-5">
-          {dataproducts && dataproducts.products.map((item) => (
+          {dataproducts && dataproducts.products.map((item,index) => (
             <div  className="grid grid-cols-1 gap-2 justify-items-center border-black border-[2px] p-4 text-black" key={index}>
               <div className="relative">
                 <Image
