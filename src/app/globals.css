@@ -31,3 +31,520 @@ body {
     text-wrap: balance;
   }
 }
+
+.eyes-onepunch {
+  transition: top 0.2s linear;
+}
+
+
+.text-stroke-lg {
+  -webkit-text-stroke: 2px white;
+  text-stroke: 2px white;
+}
+
+
+
+@keyframes berserk {
+  0% {
+    transform: translateY(0) scale(1);
+  }
+  25% {
+    transform: translateY(100px) scale(1);
+  }
+  50% {
+    transform: translateY(100px) scale(20);
+  }
+
+  70% {
+    transform: translateY(100px) scale(20);
+  }
+  100% {
+    transform: translateY(100px) scale(20);
+  }
+}
+
+.animate-berserk {
+  animation: berserk 7s infinite;
+}
+
+
+@keyframes berserk2 {
+  0% {
+    opacity: 0;
+  }
+  25% {
+    opacity: 0;
+  }
+  50% {
+    opacity: 1;
+  }
+  70% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 0;
+  }
+}
+
+.animate-berserk2 {
+  animation: berserk2 7s infinite;
+}
+
+
+@keyframes berserk3 {
+  0% {
+    opacity: 1;
+  }
+  25% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 1;
+  }
+  70% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 0;
+  }
+}
+
+.animate-berserk3 {
+  animation: berserk3 7s infinite;
+}
+
+
+@keyframes berserk4 {
+  0% {
+    opacity: 0;
+  }
+  25% {
+    opacity: 0;
+  }
+  50% {
+    opacity: 0;
+  }
+
+  70% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 1;
+  }
+}
+
+.animate-berserk4 {
+  animation: berserk4 7s infinite;
+}
+
+
+
+@keyframes vegeta8mil {
+  0% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+  25% {
+    transform: translateY(10px) ;
+    opacity: 1;
+  }
+  50% {
+    transform: translateY(20px);
+    opacity: 1;
+  }
+
+  70% {
+    transform: translateY(20px) ;
+    opacity: 1;
+  }
+  70.01% {
+    transform: translateY(20px) ;
+    opacity: 0;
+  }
+  100% {
+    transform: translateY(20px) ;
+    opacity: 0;
+  }
+}
+
+.animate-vegeta8mil {
+  animation: vegeta8mil 7s infinite;
+}
+
+
+@keyframes vegeta8mil2 {
+  0% {
+ 
+    opacity: 1;
+  }
+  25% {
+    
+    opacity: 1;
+  }
+  50% {
+   
+    opacity: 1;
+  }
+
+  70% {
+
+    opacity: 1;
+  }
+  70.01% {
+    opacity: 0;
+  }
+  100% {
+  
+    opacity: 0;
+  }
+}
+
+.animate-vegeta8mil2 {
+  animation: vegeta8mil2 7s infinite;
+}
+
+
+
+@keyframes vegeta8mil3 {
+  0% {
+ 
+    opacity: 0;
+  }
+  25% {
+    
+    opacity: 0;
+  }
+  50% {
+   
+    opacity: 0;
+  }
+
+  70% {
+
+    opacity: 0;
+  }
+  70.01% {
+    opacity: 1;
+  }
+  100% {
+  
+    opacity: 1;
+  }
+}
+
+.animate-vegeta8mil3 {
+  animation: vegeta8mil3 7s infinite;
+}
+
+
+
+
+@keyframes yugioh {
+  0% {
+    opacity: 1;
+    
+  }
+  25% {
+    opacity: 1;
+    
+  }
+
+  25.01% {
+    opacity: 0;
+    
+  }
+  50% {
+    opacity: 0;
+  }
+
+  70% {
+    opacity: 0;
+  }
+
+  70.01% {
+    opacity: 1;
+  }
+
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes yugioh2 {
+  0% {
+  
+    transform: translateY(0px) ;
+  }
+  25% {
+   
+    transform: translateX(0px) ;
+  }
+
+ 
+  50% {
+
+    transform: translateX(700px) ;
+  }
+
+  70% {
+    transform: translateX(700px) ;
+    
+  }
+  70.01% {
+    transform: translateX(0px) ;
+  }
+
+  100% {
+    
+    transform: translateX(0px) ;
+  }
+}
+
+
+@keyframes yugioh3 {
+  0% {
+  
+    transform: translateY(1000px) ;
+  }
+  25% {
+   
+    transform: translateX(1000px) ;
+  }
+
+ 
+  50% {
+
+    transform: translateX(0px) ;
+  }
+
+  70% {
+    transform: translateX(0px) ;
+    
+  }
+  70.01% {
+    transform: translateX(1000px) ;
+  }
+
+  100% {
+    
+    transform: translateX(1000px) ;
+  }
+}
+
+
+.animate-yugioh {
+  animation: yugioh 5s infinite;
+}
+
+
+.animate-yugioh2 {
+  animation: yugioh2 5s infinite;
+}
+
+
+.animate-yugioh3 {
+  animation: yugioh3 5s infinite;
+}
+
+
+
+@keyframes gokupreloader {
+  0% {
+    opacity: 1;
+  }
+
+  25% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0;
+  }
+ 
+  100% {
+    opacity: 0;
+  }
+}
+
+@keyframes gokupreloader2 {
+  0% {
+    opacity: 0;
+  }
+  25% {
+    opacity: 0;
+  }
+  50% {
+    opacity: 1;
+  }
+ 
+  100% {
+    opacity: 0;
+  }
+}
+
+@keyframes gokupreloader3 {
+  0% {
+    opacity: 0;
+  }
+  25% {
+    opacity: 0;
+  }
+  50% {
+    opacity: 0;
+  }
+  
+  100% {
+    opacity: 1;
+  }
+}
+
+.animate-gokupreloader {
+  animation: gokupreloader 1.5s step-start infinite;
+}
+
+.animate-gokupreloader2 {
+  animation: gokupreloader2 1.5s step-start infinite;
+}
+
+.animate-gokupreloader3 {
+  animation: gokupreloader3 1.5s step-start infinite;
+}
+
+
+
+
+p {
+  word-break: normal;
+}
+
+.hola, .chau {
+  font-size: 0;
+  line-height: 0;
+  position: absolute;
+  top: 50%;
+  display: block;
+  width: 20px;
+  height: 20px;
+  padding: 0;
+  -webkit-transform: translate(0, -50%);
+  -ms-transform: translate(0, -50%);
+  transform: translate(0, -50%);
+  cursor: pointer;
+
+  border: none;
+  outline: none;
+
+}
+
+.transition-transform {
+  transition: transform 0.3s ease-in-out;
+  overflow: hidden; 
+}
+
+.transform-translate-x-full {
+  transform: translateX(100%);
+}
+
+.transform-translate-x-0 {
+  transform: translateX(0);
+}
+
+
+@keyframes thanksbuy {
+  0% {
+    opacity: 0;
+  }
+  50% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 0.5;
+  }
+}
+
+.animate-thanksbuy {
+  animation: thanksbuy 0.5s linear forwards;
+}
+
+
+@keyframes thanksbuy-image {
+  0% {
+    transform: scale(0);
+    opacity: 0;
+  }
+  50% {
+    transform: scale(0.5);
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+.animate-thanksbuy-image {
+  animation: thanksbuy-image 0.5s linear forwards;
+}
+
+@keyframes thanksbuy-image-ono {
+  0% {
+    transform: translateX(2px);
+ 
+  }
+  25% {
+    transform: translateY(3px);
+  }
+  50% {
+    transform: translateX(2px);
+  }
+  75% {
+    transform: translateY(3px);
+  }
+  100% {
+    transform: translateX(2px);
+  }
+}
+
+.animate-thanksbuy-image-ono {
+  animation: thanksbuy-image-ono 0.5s linear infinite;
+}
+
+
+
+
+
+@keyframes cart {
+  0% {
+    transform: translateY(0px);
+  }
+  90% {
+    transform: translateY(0px);
+  }
+  95% {
+    transform: translateY(5px);
+  }
+  100% {
+    transform: translateY(0px);
+  }
+}
+
+.animatecart {
+ animation: cart 1s ease-in-out infinite ;
+}
+
+
+
+@media (max-width: 530px) {
+  .scaled-image {
+
+    transform: scale(3);
+    transform-origin: bottom;
+  }
+
+
+
+}
+
+

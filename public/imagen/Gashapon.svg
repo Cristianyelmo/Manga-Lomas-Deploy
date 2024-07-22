@@ -1,0 +1,17 @@
+<svg version="1.2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 908 190" width="908" height="190">
+	<title>Proyecto nuevo</title>
+	<style>
+		tspan { white-space:pre } 
+		.t0 { font-size: 150px;fill: #000000;font-weight: 400;font-family: "MangaTemple", "Manga Temple" } 
+	</style>
+	<text id="" style="transform: matrix(1,0,0,1,-54,224)" >
+	</text>
+	<text id="" style="transform: matrix(1,0,0,1,19,157);paint-order:stroke fill markers;stroke: #ffffff;stroke-width: 20;stroke-linejoin: round;" >
+	</text>
+	<text id="" style="transform: matrix(1,0,0,1,-14,66)" >
+	</text>
+	<text id="Gashapon" style="transform: matrix(1,0,0,1,42,158);paint-order:stroke fill markers;stroke: #ffffff;stroke-width: 20;stroke-linejoin: round;" >
+		<tspan x="0" y="0" class="t0">G</tspan><tspan  y="0" class="t0">a</tspan><tspan  y="0" class="t0">s</tspan><tspan  y="0" class="t0">h</tspan><tspan  y="0" class="t0">a</tspan><tspan  y="0" class="t0">p</tspan><tspan  y="0" class="t0">o</tspan><tspan  y="0" class="t0">n</tspan><tspan  y="0" class="t0">
+</tspan>
+	</text>
+</svg>
