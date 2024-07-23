@@ -39,8 +39,8 @@ export default function HomeLanding() {
     <div className="text-black">
       <style>{keyframes}</style>
 
-      <section className="lg:h-[500px] w-full  mt-4 flex flex-col lg:flex-row lg:space-x-2">
-        <div className="flex flex-col space-y-2 h-full w-[100%] lg:w-[50%]">
+      <section className="lg:h-[500px] sm:space-y-2  w-full  mt-4 flex flex-col md:flex-row md:space-x-2 md:space-y-0 lg:flex-row lg:space-x-2 lg:space-y-0">
+        <div className="flex flex-col space-y-2 h-full sm:h-[350px] lg:h-[500px] w-[100%] lg:w-[50%]">
           <div className="relative h-[50%] border-black border-[4px] bg-category overflow-hidden cursor-pointer"
              onClick={() => ChangePage(4,"Category")}
           onMouseEnter={() =>SethoverAnime((prevState) => ({
@@ -64,7 +64,7 @@ export default function HomeLanding() {
               src="/imagen/Figuras de Accion-1.webp"
               height={338}
               width={195}
-              className={`absolute z-40 left-[55%] bottom-0  transition-transform duration-300 ease-linear ${
+              className={`absolute sm:w-[150px] lg:w-[210px] right-0 z-40 left-[55%] bottom-0  transition-transform duration-300 ease-linear ${
                 hoveranime.furry ? "rotate-6 " : "rotate-0"
               }`}
             />
@@ -72,7 +72,7 @@ export default function HomeLanding() {
               src="/imagen/Figuras de Accion-0.webp"
               height={338}
               width={195}
-              className="absolute z-30 left-[55%] bottom-0  "
+              className="absolute sm:w-[150px] lg:w-[210px] right-0 z-30 left-[55%] bottom-0  "
             />
             <Image
               src="/imagen/fondoCategory.png"
@@ -100,7 +100,7 @@ export default function HomeLanding() {
               src="/imagen/Accesorios.svg"
               height={250}
               width={170}
-              className={`absolute z-30 lg:w-[270px] top-[50%] ml-4  transition-transform duration-300 ease-linear ${
+              className={`absolute  z-30 lg:w-[270px] top-[50%] ml-4   transition-transform duration-300 ease-linear ${
                 hoveranime.naruto ? "rotate-12 scale-110" : "rotate-0 scale-1"
               }`}
             />
@@ -109,14 +109,14 @@ export default function HomeLanding() {
               src="/imagen/Accesorios-1.webp"
               height={300}
               width={248}
-              className={`absolute z-30 left-[55%] eyes-onepunch `}
+              className={`absolute z-30 sm:w-[200px] right-0  left-[55%] eyes-onepunch `}
               style={{ top: hoveranime.naruto ? "-5px" : "0px" }}
             />
             <Image
               src="/imagen/Accesorios-0.webp"
               height={300}
               width={248}
-              className={`absolute z-20 left-[55%]  transition-transform duration-300 ease-linear ${
+              className={`absolute z-20 right-0  left-[55%]  sm:w-[200px]  transition-transform duration-300 ease-linear ${
                 hoveranime.naruto ? "rotate-6 " : "rotate-0 "
               }`}
             />
@@ -130,7 +130,7 @@ export default function HomeLanding() {
             <div className="absolute inset-0 bg-black bg-opacity-50"></div>
           </div>
         </div>
-        <div className="flex flex-col space-y-2 h-full w-[100%] lg:w-[50%]">
+        <div className="flex flex-col space-y-2 h-full sm:h-[350px] lg:h-[500px] w-[100%] lg:w-[50%]">
           <div
             className="relative h-[65%] border-black border-[4px] bg-category overflow-hidden cursor-pointer"
             onClick={() => ChangePage(1,"Category")}
@@ -222,7 +222,7 @@ export default function HomeLanding() {
             src="/imagen/berserkManga.jpg"
             height={300}
             width={113}
-            className="lg:w-[213px] lg:h-[400px] ml-2 lg:ml-0"
+            className="lg:w-[213px] lg:w-[200px] ml-2 lg:ml-0"
           />
 
           <div className="text-white lg:text-3xl flex flex-col space-y-2 items-center self-center ">
@@ -260,7 +260,7 @@ export default function HomeLanding() {
 
       <section className="mt-5 mb-5 space-y-10">
         <h1 className="text-center text-4xl mb-5">Productos</h1>
-        <section className=" grid grid-cols-1 sm:grid-cols-2  justify-items-center ">
+        <section className=" grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-2 space-y-2 justify-items-center ">
       {dataproducts &&
         dataproducts.products.map((item, index) => (
           <div  className="relative cursor-pointer" key={index}>
@@ -283,7 +283,7 @@ export default function HomeLanding() {
             <div className="relative mt-6">
               <Image
                 onClick={() => ChangePage(item.id, "Producto")}
-                src={`/productos/${item.image}.webp`}
+                src={`/productos/${item.image}`}
                 height={400}
                 width={213}
                 className="border-[4px] border-black z-20 relative"

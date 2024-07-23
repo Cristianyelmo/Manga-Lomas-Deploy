@@ -7,8 +7,9 @@ const ProductList = ({ selectedFecha, handleFechaChange, datauser, DateOption, R
 const {ratingselected} =  UserHook()
   return (
     <section>
+      
       <div className="flex justify-center">
-        <div className="text-black flex items-center space-x-4">
+        <div className="text-black flex items-center space-x-4 mt-5">
           <p>Fecha</p>
           <select
             value={selectedFecha}
@@ -16,17 +17,21 @@ const {ratingselected} =  UserHook()
             className="border-black border-[3px] p-2 flex"
           >
             <option onClick={() => DateOption('Todos')}>Todos</option>
-            {datauser && datauser.fechasUnicasArray.map((fecha) => (
+            {datauser.fechasUnicasArray.map((fecha) => (
               <option key={fecha} onClick={() => DateOption(fecha)}>
                 {fecha}
               </option>
             ))}
           </select>
         </div>
+      
       </div>
-
+      <div className="flex flex-col mb-2 text-black items-center border-black border-[2px] p-4 mt-4">
+        <h1>Total</h1>
+        <p>{totalValue}$</p>
+      </div>
       <div className="hidden lg:block border-black border-[2px] p-4">
-        <div className="grid grid-cols-7 gap-10 text-black">
+        <div className="grid grid-cols-7 gap-10 text-black mb-10">
           <p>Foto</p>
           <p>Nombre</p>
           <p>Precio</p>
@@ -37,11 +42,11 @@ const {ratingselected} =  UserHook()
         </div>
 
         <div className="space-y-5">
-          {datauser && datauser.producto.map((item,index) => (
-            <div  className="grid grid-cols-7 gap-10 text-black" key={index}>
+          {datauser.producto.map((item,index) => (
+            <div  className="grid grid-cols-7 gap-5 text-black" key={index}>
               <div className="relative">
                 <Image
-                  src={`/productos/${item.productos.image}.webp`}
+                  src={`/productos/${item.productos.image}`}
                   height={300}
                   width={113}
                   className="border-[4px] border-black z-20 relative"
@@ -87,7 +92,7 @@ const {ratingselected} =  UserHook()
         
 
         <div className="space-y-5">
-          {datauser && datauser.producto.map((item,index) => (
+          {datauser.producto.map((item,index) => (
             <div key={index}   className="grid grid-cols-1 gap-2 justify-items-center border-black border-[2px] p-4 text-black" >
               <div className="relative">
                 <Image
@@ -149,10 +154,7 @@ const {ratingselected} =  UserHook()
 
 
 
-      <div className="flex flex-col text-black items-center border-black border-[2px] p-4 mt-4">
-        <h1>Total</h1>
-        <p>{totalValue}$</p>
-      </div>
+     
     </section>
   );
 };

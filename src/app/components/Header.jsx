@@ -90,7 +90,7 @@ export default function Header({ clickHeader }) {
             <div key={index}   className="flex justify-between"> 
            <div className="relative">
                 <Image
-                  src={`/productos/${item.productos.image}.webp`}
+                  src={`/productos/${item.productos.image}`}
                   height={200}
                   width={63}
                   className="border-[4px] border-black z-20 relative"
@@ -187,7 +187,7 @@ export default function Header({ clickHeader }) {
         
         <section className="flex justify-between ">
           <div
-            className="text-black flex flex-col items-center mt-5 relative"
+            className="text-black flex flex-col items-center mt-6 relative"
            
           >
             <div className="bg-black w-[50px] h-[50px] rounded-full " onClick={handleToggle}></div>
@@ -206,7 +206,7 @@ export default function Header({ clickHeader }) {
             width={200}
             height={500}
             onClick={clickHeader}
-            className="lg:w-[500px]"
+            className="lg:w-[500px] mt-3 sm:w-[400px]"
           />
           <div className="relative" onClick={() => setViewCart(true)}>
       <Image
