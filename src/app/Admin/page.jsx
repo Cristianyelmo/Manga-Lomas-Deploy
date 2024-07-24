@@ -121,7 +121,7 @@ const {  handleFilterProductChange,
                     <div key={index} className="grid grid-cols-7 gap-10 text-black ">
                       <div className="relative">
                         <Image
-                          src={`/productos/${item.productos.image}`}
+                          src={`/productos/${item.productos.image}.webp`}
                           height={300}
                           width={113}
                           className="border-[4px] border-black z-20 relative"
@@ -151,7 +151,7 @@ const {  handleFilterProductChange,
             <div  className="grid grid-cols-1 gap-2 justify-items-center border-black border-[2px] p-4 text-black" key={index}>
               <div className="relative">
                 <Image
-                  src={`/productos/${item.productos.image}`}
+                  src={`/productos/${item.productos.image}.webp`}
                   height={300}
                   width={113}
                   className="border-[4px] border-black z-20 relative"
@@ -238,7 +238,7 @@ const {  handleFilterProductChange,
                   >
                     <div className="relative">
                       <Image
-                        src={`/productos/${item.image}`}
+                        src={`/productos/${item.image}.webp`}
                         height={300}
                         width={113}
                         className="border-[4px] border-black z-20 relative"
@@ -268,7 +268,7 @@ const {  handleFilterProductChange,
             <div  className="grid grid-cols-1 gap-2 justify-items-center border-black border-[2px] p-4 text-black" key={index}>
               <div className="relative">
                 <Image
-                  src={`/productos/${item.image}`}
+                  src={`/productos/${item.image}.webp`}
                   height={300}
                   width={113}
                   className="border-[4px] border-black z-20 relative"

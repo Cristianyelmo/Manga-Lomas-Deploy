@@ -46,7 +46,7 @@ const {ratingselected} =  UserHook()
             <div  className="grid grid-cols-7 xl:gap-5 lg:gap-0 text-black" key={index}>
               <div className="relative">
                 <Image
-                  src={`/productos/${item.productos.image}`}
+                  src={`/productos/${item.productos.image}.webp`}
                   height={300}
                   width={113}
                   className="border-[4px] border-black z-20 relative"
@@ -96,7 +96,7 @@ const {ratingselected} =  UserHook()
             <div key={index}   className="grid grid-cols-1 flex gap-2 justify-items-center border-black border-[2px] p-4 text-black" >
               <div className="relative">
                 <Image
-                  src={`/productos/${item.productos.image}`}
+                  src={`/productos/${item.productos.image}.webp`}
                   height={300}
                   width={113}
                   className="border-[4px] border-black z-20 relative"
