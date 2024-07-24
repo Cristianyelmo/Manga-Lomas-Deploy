@@ -122,7 +122,7 @@ function Carousel({arrayProductos}) {
       <div className="relative mt-6 ">
         <Image
           onClick={() => ChangePage(item.id, "Producto")}
-          src={`/productos/${item.image}`}
+          src={`/productos/${item.image}.webp`}
           height={400}
           width={213}
           className="border-[4px] border-black z-20 relative"
