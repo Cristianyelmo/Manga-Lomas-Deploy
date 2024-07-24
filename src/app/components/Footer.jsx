@@ -9,8 +9,8 @@ export default function Footer() {
 
 
   return (
-    <footer className="h-[200px]">
-<h1>hola</h1>
+    <footer className="h-[200px] bg-black text-white text-center p-2 content-center">
+<h1>Hecho con ❤ por Cristian Amarilla</h1>
     </footer>
    
  

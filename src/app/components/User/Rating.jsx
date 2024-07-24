@@ -21,7 +21,7 @@ console.log(errors)
                   <div className="relative">
                     <div className="relative">
                       <Image
-                        src={`/productos/${ratingobject.image}.webp`}
+                        src={`/productos/${ratingobject.image}`}
                         height={400}
                         width={213}
                         className="border-[4px] border-black z-20 relative"

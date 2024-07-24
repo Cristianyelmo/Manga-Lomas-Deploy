@@ -45,7 +45,7 @@ function SamplePrevArrow(props) {
  
 function Carousel({arrayProductos}) {
   const [display, setDisplay] = useState(true);
-  const [width, setWidth] = useState(300);
+
   console.log(arrayProductos)
   const settings = {
     dots: true,
@@ -55,7 +55,7 @@ function Carousel({arrayProductos}) {
     slidesToScroll: 1,
     responsive: [
       {
-        breakpoint: 1024, 
+        breakpoint: 1536, 
         settings: {
           slidesToShow: 3,
           slidesToScroll: 1,
@@ -64,7 +64,7 @@ function Carousel({arrayProductos}) {
         }
       },
       {
-        breakpoint: 768, // a partir de este ancho de pantalla
+        breakpoint: 1024, // a partir de este ancho de pantalla
         settings: {
           slidesToShow: 2,
           slidesToScroll: 1,
@@ -73,7 +73,7 @@ function Carousel({arrayProductos}) {
         }
       },
       {
-        breakpoint: 480, // a partir de este ancho de pantalla
+        breakpoint: 640, // a partir de este ancho de pantalla
         settings: {
           slidesToShow: 1,
           slidesToScroll: 1
@@ -91,9 +91,10 @@ function Carousel({arrayProductos}) {
     
       <div
         style={{
-          width: width + "px",
+         
           display: display ? "block" : "none"
         }}
+        className="w-[300px] sm:w-[500px] lg:w-[900px]"
       >
         <Slider {...settings}>
           
@@ -113,12 +114,12 @@ function Carousel({arrayProductos}) {
       <div className="absolute z-40 bottom-[20%] left-[10%]">
         <div className="relative">
           <div className="absolute z-20 bg-white h-[70px] w-[150px] text-center space-y-2 content-center border-[4px] border-black p-2">
-            <p className="text-xs">{item.nombre}</p>
-            <p className="text-xs">{item.precio}$</p>
+            <p className="text-xs text-black truncate">{item.nombre}</p>
+            <p className="text-xs text-black truncate">{item.precio}$</p>
           </div>
         </div>
       </div>
-      <div className="relative mt-6">
+      <div className="relative mt-6 ">
         <Image
           onClick={() => ChangePage(item.id, "Producto")}
           src={`/productos/${item.image}`}

@@ -24,7 +24,7 @@ export async function GET(req, { params }) {
  
     const productosSimilares = await prisma.productos.findMany({
         where: {
-            id_subcategoria: producto.id_subcategoria,
+            id_categoria: producto.id_categoria,
             id: {
                 not: producto.id,  
             },

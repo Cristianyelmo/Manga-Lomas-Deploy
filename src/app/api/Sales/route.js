@@ -34,9 +34,14 @@ export async function GET(request, { params }) {
             usuario:true
         },
     });
+
+    const totalValue = producto.reduce((accumulator, currentItem) => {
+        return accumulator + currentItem.productos.precio * currentItem.cantidad ;
+      }, 0); 
     const fechasUnicasArray = [...new Set(producto2.map(item => item.fecha))];
    const ProductosDate = { producto,
-    fechasUnicasArray
+    fechasUnicasArray,
+    totalValue
 
 }
 

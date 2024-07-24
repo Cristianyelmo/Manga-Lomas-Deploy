@@ -43,7 +43,7 @@ const {ratingselected} =  UserHook()
 
         <div className="space-y-5">
           {datauser.producto.map((item,index) => (
-            <div  className="grid grid-cols-7 gap-5 text-black" key={index}>
+            <div  className="grid grid-cols-7 xl:gap-5 lg:gap-0 text-black" key={index}>
               <div className="relative">
                 <Image
                   src={`/productos/${item.productos.image}`}
@@ -93,7 +93,7 @@ const {ratingselected} =  UserHook()
 
         <div className="space-y-5">
           {datauser.producto.map((item,index) => (
-            <div key={index}   className="grid grid-cols-1 gap-2 justify-items-center border-black border-[2px] p-4 text-black" >
+            <div key={index}   className="grid grid-cols-1 flex gap-2 justify-items-center border-black border-[2px] p-4 text-black" >
               <div className="relative">
                 <Image
                   src={`/productos/${item.productos.image}`}
@@ -103,6 +103,7 @@ const {ratingselected} =  UserHook()
                 />
                 <div className="border-[4px] border-black h-[150px] w-[113px] bg-black z-10 absolute left-[1%] bottom-[-3%]"></div>
               </div>
+             
               <div className='flex flex-col text-center'>
                 <p className='font-bold'>Nombre:</p>
               <p>{item.productos.nombre}</p>
@@ -146,6 +147,7 @@ const {ratingselected} =  UserHook()
                   Calificar
                 </button>
               )}
+           
             </div>
           ))}
         </div>

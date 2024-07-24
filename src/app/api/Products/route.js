@@ -36,14 +36,12 @@ if (filter && filter == 'SinStock') {
     )
 
 
-     const totalValue = products.reduce((accumulator, currentItem) => {
-        return accumulator + currentItem.precio * currentItem.vendidos ;
-      }, 0); 
+     
 
 
 const ObjectProduct = {
-    products,
-    totalValue
+    products
+   
 }
 
     return NextResponse.json(ObjectProduct)

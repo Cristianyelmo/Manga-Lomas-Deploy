@@ -6,10 +6,10 @@ export default function Profile() {
  
 
   return (
-    <section className="grid lg:grid-cols-2  grid-cols-1 gap-20">
-            <div className="flex flex-col text-black items-center self-center">
+    <section className="grid lg:grid-cols-2  grid-cols-1 lg:gap-20">
+            <div className="flex flex-col text-black items-center self-center p-10 space-y-4">
               <Image src="/imagen/perfil.svg" height={400} width={213} />
-              <h1>Kat</h1>
+              <h1>Cristian</h1>
             </div>
 
             <div className="flex flex-col space-y-10 text-black ">

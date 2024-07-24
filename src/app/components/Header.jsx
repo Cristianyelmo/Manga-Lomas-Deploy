@@ -68,7 +68,7 @@ export default function Header({ clickHeader }) {
    
       <div
 
-        className={`bg-[#F3F3F3] p-4 w-[90%] lg:w-[30%] h-screen absolute z-50 top-0 right-0 transition-transform transform ${
+        className={`bg-[#F3F3F3] p-4 w-[90%] md:w-[50%] sm:w-[70%] lg:w-[30%] h-screen absolute z-50 top-0 right-0 transition-transform transform ${
           viewcart ? "translate-x-0" : "translate-x-full"
         }`}
       >
@@ -86,74 +86,70 @@ export default function Header({ clickHeader }) {
         </div>
         <div className="space-y-2">
         {dataShoppinCart &&
-          dataShoppinCart.producto.map((item,index) => (
-            <div key={index}   className="flex justify-between"> 
-           <div className="relative">
-                <Image
-                  src={`/productos/${item.productos.image}`}
-                  height={200}
-                  width={63}
-                  className="border-[4px] border-black z-20 relative"
-                />
-              {/*   <div className="border-[4px] border-black h-[150px] w-[113px] bg-black z-10 absolute left-[1%] bottom-[-3%]"></div> */}
-              </div>
-            <div className="text-black flex flex-col items-center">
-                <p>{item.productos.nombre}</p>
-                <div className="flex border-black border-[3px] justify-between p-1 px-2 w-[100px]">
-                <button
-                onClick={() =>
-                  AddLess(
-                    item.id,
-                    false,
-                    item.cantidad,
-                    item.fecha,
-                    item.total,
-                    item.id_usuario,
-                    item.id_producto,
-                    item.compra
-                  )
-                }
-                className="text-2xl"
-              >
-                -
-              </button>
-              <p>{item.cantidad}</p>
-             
+  dataShoppinCart.producto.map((item, index) => (
+    <div key={index} className="flex justify-between items-center space-x-4 p-2 border-b">
+      <div className="relative">
+        <Image
+          src={`/productos/${item.productos.image}`}
+          height={200}
+          width={63}
+          className="border-[4px] border-black z-20 relative"
+        />
+      </div>
+      <div className="flex flex-col items-center w-1/3">
+        <div className="flex justify-center w-full">
+          <p className="truncate w-full text-black text-center" title={item.productos.nombre}>{item.productos.nombre}</p>
+        </div>
+        <div className="flex border-black border-[3px] justify-between p-1 px-2 w-[100px]">
+          <button
+            onClick={() =>
+              AddLess(
+                item.id,
+                false,
+                item.cantidad,
+                item.fecha,
+                item.total,
+                item.id_usuario,
+                item.id_producto,
+                item.compra
+              )
+            }
+            className="text-2xl text-black"
+          >
+            -
+          </button>
+          <p className="text-black">{item.cantidad}</p>
+          <button className="text-2xl text-black"
+            onClick={() =>
+              AddLess(
+                item.id,
+                true,
+                item.cantidad,
+                item.fecha,
+                item.total,
+                item.id_usuario,
+                item.id_producto,
+                item.compra
+              )
+            }
+          >
+            +
+          </button>
+        </div>
+      </div>
+      <div className="flex flex-col items-center text-black">
+        <Image
+          src="/icons/DeleteIcon.svg"
+          width={50}
+          height={50}
+          className="cursor-pointer"
+          onClick={() => DeleteCart(item.id)}
+        />
+        <p>{item.productos.precio}$</p>
+      </div>
+    </div>
+  ))}
 
-
-
-              <button className="text-2xl"
-                onClick={() =>
-                  AddLess(
-                    item.id,
-                    true,
-                    item.cantidad,
-                    item.fecha,
-                    item.total,
-                    item.id_usuario,
-                    item.id_producto,
-                    item.compra
-                  )
-                }
-              >
-                +
-              </button>
-              </div>
-
-             
-            </div>
-            <div className="flex flex-col text-black">
-            <Image
-                src="/icons/DeleteIcon.svg"
-                width={50}
-                height={50}
-                className="cursor-pointer"
-                onClick={() => DeleteCart(item.id)}
-              />
-              <p>{item.productos.precio}$</p>
-            </div>
-            </div>
-          ))}
           </div>
          
         {dataShoppinCart && dataShoppinCart.producto && dataShoppinCart.producto.length !== 0 ? (
@@ -190,7 +186,9 @@ export default function Header({ clickHeader }) {
             className="text-black flex flex-col items-center mt-6 relative"
            
           >
-            <div className="bg-black w-[50px] h-[50px] rounded-full " onClick={handleToggle}></div>
+            <div className="bg-black border-black border-[3px] w-[50px] h-[50px] rounded-full " onClick={handleToggle}>
+            <Image src="/imagen/perfil.svg" height={400} width={213} />
+            </div>
           
 {clickuseradmin && <div className="bg-white p-3 border-[3px] border-black absolute mt-[40%] ml-[80%] z-20" >
   <p  onClick={handleClickUser}>Usuario</p>

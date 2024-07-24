@@ -87,8 +87,8 @@ export default function Category() {
        
 datacategory.subcategorias.length !== 0 &&
 <>
-        <h1 className="text-center text-3xl text-black ">Categorias</h1>
-       <div className="grid lg:grid-cols-2 grid-cols-1 gap-10 w-full">
+        <h1 className="text-center text-3xl text-black m-10 ">Categorias</h1>
+       <div className="grid lg:grid-cols-2 grid-cols-1 md:grid-cols-2 md:gap-5 gap-10 w-full">
           <div
             className="relative h-[130px] border-black border-[4px] bg-category overflow-hidden cursor-pointer"
             onClick={() => RefreshCategory(0,3)}
@@ -156,7 +156,7 @@ datacategory.subcategorias.length !== 0 &&
         </>
         }
 
-        <div className=" grid lg:grid-cols-3 grid-cols-1 justify-items-center mt-10 ">
+        <div className="mb-10 grid lg:grid-cols-3 grid-cols-1 md:grid-cols-2 justify-items-center space-y-6 mt-10 ">
           {datacategory &&
             datacategory.categoria.productos.map((item,index) => (
               <div key={index}  className="relative cursor-pointer">
@@ -172,8 +172,8 @@ datacategory.subcategorias.length !== 0 &&
                  
                   <div className="relative">
                     <div className="absolute z-20 bg-white h-[70px] w-[150px] text-center space-y-2 content-center border-[4px] border-black p-2 m-2">
-                      <p className="text-xs text-black">{item.nombre}</p>
-                      <p className="text-xs text-black">{item.precio}$</p>
+                      <p className="text-xs text-black truncate">{item.nombre}</p>
+                      <p className="text-xs text-black truncate">{item.precio}$</p>
                     </div>
                   </div>
                 </div>

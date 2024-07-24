@@ -63,7 +63,7 @@ export default function User() {
     <>
     
         
-        <main className="bg-[#F3F3F3] lg:px-12 lg:py-12 px-6 py-4">
+        <main className="bg-[#F3F3F3] lg:px-12 lg:py-12 px-6 py-4 relative overflow-hidden">
         <Header clickHeader={handleClick} />
         <div className="flex justify-center text-black space-x-10">
           <div>

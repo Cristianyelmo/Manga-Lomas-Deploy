@@ -57,9 +57,10 @@ const {  handleFilterProductChange,
   if (Preloading) {
     return <Preloader />;
   }
+  console.log(datasales)
   return (
     <>
-      <main className="bg-[#F3F3F3] lg:px-12 lg:py-12 px-6 py-4">
+      <main className="bg-[#F3F3F3] lg:px-12 lg:py-12 px-6 py-4 relative overflow-hidden">
         <Header clickHeader={handleClick} />
 
         <div className="flex justify-center text-black space-x-10">
@@ -84,7 +85,7 @@ const {  handleFilterProductChange,
         {dinamicUser ? (
           <section>
             <div className="flex justify-center">
-              <div className=" text-black flex items-center space-x-4">
+              <div className=" text-black flex items-center space-x-4 mt-5">
                 <p>Fecha</p>
                 <select
                   value={selectedfecha}
@@ -99,7 +100,10 @@ const {  handleFilterProductChange,
                 </select>
               </div>
             </div>
-
+            <div className="flex flex-col text-black items-center border-black border-[2px] p-4 mt-4 mb-2">
+              <h1>Total</h1>
+              <p>{datasales && datasales.totalValue}$</p>
+            </div>
             <div className="hidden lg:block border-black border-[2px]  p-4">
               <div className="grid grid-cols-7 gap-10 text-black ">
                 <p>Foto</p>
@@ -117,7 +121,7 @@ const {  handleFilterProductChange,
                     <div key={index} className="grid grid-cols-7 gap-10 text-black ">
                       <div className="relative">
                         <Image
-                          src={`/productos/${item.productos.image}.webp`}
+                          src={`/productos/${item.productos.image}`}
                           height={300}
                           width={113}
                           className="border-[4px] border-black z-20 relative"
@@ -172,7 +176,7 @@ const {  handleFilterProductChange,
               </div>
               <div className='flex flex-col text-center'>
               <p className='font-bold'>Usuario:</p>
-              <p>{item.usuario.nombre}$</p>
+              <p>{item.usuario.nombre}</p>
               </div>
               <div className='flex flex-col text-center'>
               <p className='font-bold'>Total:</p>
@@ -188,15 +192,12 @@ const {  handleFilterProductChange,
 
             
 
-            <div className="flex flex-col text-black items-center border-black border-[2px] p-4 mt-4">
-              <h1>Total</h1>
-              <p>500$</p>
-            </div>
+            
           </section>
         ) : (
           <section>
             <div className="flex justify-center">
-              <div className=" text-black flex items-center space-x-4">
+              <div className=" text-black flex items-center space-x-4 mt-5 mb-5">
                 <p>Fecha</p>
 
                 <select
@@ -216,6 +217,7 @@ const {  handleFilterProductChange,
                 </select>
               </div>
             </div>
+            
 
             <div className=" hidden lg:block  border-black border-[2px]  p-4">
               <div className="grid grid-cols-6 gap-10 text-black ">
@@ -229,7 +231,7 @@ const {  handleFilterProductChange,
               </div>
 
               <div className="space-y-5">
-                {dataproducts && dataproducts.products.map((item, index) => (
+                {dataproducts.products.map((item, index) => (
                   <div
                     key={index}
                     className="grid grid-cols-6 gap-10 text-black "
@@ -291,12 +293,12 @@ const {  handleFilterProductChange,
               </div>
               <div className='flex flex-col text-center'>
               <p className='font-bold'>Vendidos:</p>
-              <p>{item.vendidos}$</p>
+              <p>{item.vendidos}</p>
               </div>
 
               <div className='flex flex-col text-center'>
               <p className='font-bold'>Stock:</p>
-              <p>{item.stock}$</p>
+              <p>{item.stock}</p>
               </div>
               <div className='flex flex-col text-center'>
               <p className='font-bold'>Total:</p>
@@ -308,10 +310,7 @@ const {  handleFilterProductChange,
         </div>
       </div>
 
-            <div className="flex flex-col text-black items-center border-black border-[2px] p-4 mt-4">
-              <h1>Total</h1>
-              <p>{dataproducts.totalValue}$</p>
-            </div>
+           
           </section>
         )}
       </main>
