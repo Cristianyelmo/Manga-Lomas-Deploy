@@ -73,7 +73,7 @@ export default function Header({ clickHeader }) {
         }`}
       >
         <div className="flex justify-between">
-          <h1 className="text-black text-2xl">Carrito</h1>
+          <h1 className="text-black text-2xl">Carritos</h1>
         <button className="text-black " onClick={() => setViewCart(false)}>
         <Image
                 src="/icons/close.svg"
