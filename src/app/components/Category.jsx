@@ -58,20 +58,20 @@ export default function Category() {
           src={`/imagen/${datacategory && datacategory.categoria.nombre}.svg`}
           height={250}
           width={170}
-          className={`absolute lg:w-[270px] z-30 top-[50%] ml-4  transition-transform duration-300 ease-linear `}
+          className={`absolute lg:w-[230px] z-30 top-[30%] ml-4 mb-10 transition-transform duration-300 ease-linear `}
         />
 
         <Image
           src={`/imagen/${datacategory && datacategory.categoria.nombre}-1.webp`}
           height={1040}
-          width={120}
-          className={`absolute lg:w-[320px] z-40 right-0 bottom-0 h-full  eyes-onepunch`}
+          width={220}
+          className={`w-[150px] absolute lg:w-[320px] z-40 right-0 bottom-0 h-full  eyes-onepunch`}
         />
         <Image
           src={`/imagen/${datacategory && datacategory.categoria.nombre}-0.webp`}
           height={1040}
-          width={120}
-          className="absolute lg:w-[320px] z-30 right-0  bottom-0 h-full "
+          width={220}
+          className="w-[150px] absolute lg:w-[320px] z-30 right-0  bottom-0 h-full "
         />
         <Image
           src="/imagen/fondoCategory.png"

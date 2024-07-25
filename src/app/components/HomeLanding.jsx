@@ -22,14 +22,14 @@ export default function HomeLanding() {
     Preloading,
     setPreloading,
     ChangePage,
-    hoveranime, SethoverAnime
+    hoveranime,
+    handleMouseLeave,
+        handleMouseEnter
   } = ProductHook();
 
   
 
- 
-
-
+  
 
   if (Preloading) {
     return <Preloader />
@@ -43,19 +43,14 @@ export default function HomeLanding() {
         <div className="flex flex-col space-y-2 h-full sm:h-[350px] lg:h-[500px] w-[100%] lg:w-[50%]">
           <div className="relative h-[50%] border-black border-[4px] bg-category overflow-hidden cursor-pointer"
              onClick={() => ChangePage(4,"Category")}
-          onMouseEnter={() =>SethoverAnime((prevState) => ({
-            ...prevState,
-            furry:true,
-          }))}
-          onMouseLeave={() =>SethoverAnime((prevState) => ({
-            ...prevState,
-            furry:false,
-          }))}>
+             onMouseLeave={()=>handleMouseLeave('furry')}
+             onMouseEnter={()=>handleMouseEnter('furry')}>
+           
             <Image
               src="/imagen/Figuras de Accion.svg"
               height={250}
               width={170}
-              className={`absolute sm:w-[200px] lg:w-[270px] z-30 top-[50%] ml-4  transition-transform duration-300 ease-linear ${
+              className={`absolute sm:w-[200px] lg:w-[200px] z-30 top-[50%] ml-4  transition-transform duration-300 ease-linear ${
                 hoveranime.furry ? "rotate-12 scale-110" : "rotate-0 scale-1"
               }`}
             />
@@ -85,14 +80,8 @@ export default function HomeLanding() {
 
           <div className="relative h-[50%] border-black border-[4px] bg-category overflow-hidden cursor-pointer"
           onClick={() => ChangePage(2,"Category")}
-           onMouseEnter={() =>SethoverAnime((prevState) => ({
-            ...prevState,
-            naruto:true,
-          }))}
-          onMouseLeave={() =>SethoverAnime((prevState) => ({
-            ...prevState,
-            naruto:false,
-          }))}>
+          onMouseLeave={()=>handleMouseLeave('naruto')}
+             onMouseEnter={()=>handleMouseEnter('naruto')}>
           
           
           
@@ -109,14 +98,14 @@ export default function HomeLanding() {
               src="/imagen/Accesorios-1.webp"
               height={300}
               width={248}
-              className={`absolute z-30 sm:w-[200px] right-0  left-[55%]  sm:left-auto  eyes-onepunch `}
+              className={`absolute  z-30 sm:w-[200px]  right-0   left-[55%]  sm:left-auto  eyes-onepunch `}
               style={{ top: hoveranime.naruto ? "-5px" : "0px" }}
             />
             <Image
               src="/imagen/Accesorios-0.webp"
               height={300}
               width={248}
-              className={`absolute z-20 right-0  left-[55%]  sm:left-auto   sm:w-[200px]  transition-transform duration-300 ease-linear ${
+              className={`absolute z-20 right-0   left-[55%]  sm:left-auto   sm:w-[200px]  transition-transform duration-300 ease-linear ${
                 hoveranime.naruto ? "rotate-6 " : "rotate-0 "
               }`}
             />
@@ -134,14 +123,8 @@ export default function HomeLanding() {
           <div
             className="relative h-[65%] border-black border-[4px] bg-category overflow-hidden cursor-pointer"
             onClick={() => ChangePage(1,"Category")}
-            onMouseEnter={() =>SethoverAnime((prevState) => ({
-              ...prevState,
-              onePunch:true,
-            }))}
-            onMouseLeave={() =>SethoverAnime((prevState) => ({
-              ...prevState,
-              onePunch:false,
-            }))}
+            onMouseLeave={()=>handleMouseLeave('onePunch')}
+            onMouseEnter={()=>handleMouseEnter('onePunch')}
           >
             <Image
               src="/imagen/Mangas.svg"
@@ -176,19 +159,13 @@ export default function HomeLanding() {
 
           <div className="relative h-[35%] border-black border-[4px] bg-category overflow-hidden cursor-pointer"
             onClick={() => ChangePage(3,"Category")}
-          onMouseEnter={() =>SethoverAnime((prevState) => ({
-            ...prevState,
-            onepiece:true,
-          }))}
-          onMouseLeave={() =>SethoverAnime((prevState) => ({
-            ...prevState,
-            onepiece:false,
-          }))}>
+            onMouseLeave={()=>handleMouseLeave('onepiece')}
+            onMouseEnter={()=>handleMouseEnter('onepiece')}>
             <Image
               src="/imagen/Posters.svg"
               height={250}
               width={170}
-              className={`absolute sm:w-[250px] md:w-[200px] z-30 top-[50%] lg:w-[270px] ml-4  transition-transform duration-300 ease-linear ${
+              className={`absolute  w-[150px] sm:w-[200px] md:w-[200px] z-30 top-[50%] lg:w-[270px] ml-4  transition-transform duration-300 ease-linear ${
                 hoveranime.onepiece ? "rotate-12 scale-110" : "rotate-0 scale-1"
               }`}
             />

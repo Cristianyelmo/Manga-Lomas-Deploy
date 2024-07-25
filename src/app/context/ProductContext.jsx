@@ -1,7 +1,17 @@
 "use client";
 import { createContext, useContext, useState, useEffect, useRef } from "react";
-import { AddShoppingCart, BuyShoppingCart, DeleteShoppingCart, GetShoppingCart, ShoppingCartAddLess } from "../services/Shopping.service";
-import { GetCategory, GetIdProducts, GetProducts } from "../services/Products.service";
+import {
+  AddShoppingCart,
+  BuyShoppingCart,
+  DeleteShoppingCart,
+  GetShoppingCart,
+  ShoppingCartAddLess,
+} from "../services/Shopping.service";
+import {
+  GetCategory,
+  GetIdProducts,
+  GetProducts,
+} from "../services/Products.service";
 import { useRouter } from "next/navigation";
 
 export const ProductContext = createContext(null);
@@ -22,7 +32,7 @@ export const ProductProvider = ({ children }) => {
   const moveDiv = (index) => {
     setIndexCart(index);
     const movableDiv = movableDivRef.current[index];
-    console.log(movableDiv)
+    console.log(movableDiv);
     const targetDiv = targetDivRef.current;
 
     const targetRect = targetDiv.getBoundingClientRect();
@@ -84,25 +94,13 @@ export const ProductProvider = ({ children }) => {
     }, 1000);
   };
 
-
-
-
-
-
-
-
-
-
-
-
   const GetshoppingCart = async () => {
     try {
-      const shoppingcart = await GetShoppingCart()
+      const shoppingcart = await GetShoppingCart();
       setDataShoppinCart(shoppingcart);
     } catch (error) {
-    console.error
-    }finally{
-      
+      console.error;
+    } finally {
     }
   };
   const AddCart = async (index, id, precio) => {
@@ -123,24 +121,19 @@ export const ProductProvider = ({ children }) => {
     console.log(AddCartObject);
     try {
       await AddShoppingCart(AddCartObject);
-      await GetshoppingCart(); 
-    setTimeout(() => {
-      const audio = new Audio('/sound/untitled.mp3');
-      audio.play();
-    }, 950);
+      await GetshoppingCart();
+      setTimeout(() => {
+        const audio = new Audio("/sound/untitled.mp3");
+        audio.play();
+      }, 950);
     } catch (error) {
       console.error("Error al enviar los datos:", error);
       throw error;
     }
-    
-    
   };
-
-
 
   const AddCartProduct = async (id, precio) => {
     const today = new Date();
-  
 
     const formattedDate = `${today.getFullYear()}-${(today.getMonth() + 1)
       .toString()
@@ -153,54 +146,46 @@ export const ProductProvider = ({ children }) => {
       id_producto: id,
     };
 
-    
     try {
       await AddShoppingCart(AddCartObject);
-      await GetshoppingCart(); 
-    setTimeout(() => {
-      const audio = new Audio('/sound/untitled.mp3');
-      audio.play();
-    }, 950);
+      await GetshoppingCart();
+      setTimeout(() => {
+        const audio = new Audio("/sound/untitled.mp3");
+        audio.play();
+      }, 950);
     } catch (error) {
       console.error("Error al enviar los datos:", error);
       throw error;
-    }finally{
-      setAddCart(true)
+    } finally {
+      setAddCart(true);
       setTimeout(() => {
-        setAddCart(false)
+        setAddCart(false);
       }, 900);
     }
-    
-    
   };
-const[addcart,setAddCart] = useState(false)
-   const [Preloading, setPreloading] = useState(true);
+  const [addcart, setAddCart] = useState(false);
+  const [Preloading, setPreloading] = useState(true);
   const [dataproducts, setDataProducts] = useState(null);
   const [dataproductsforid, setDataProductsforid] = useState(null);
-  const [datacategory, setDatacategory] = useState(null)
+  const [datacategory, setDatacategory] = useState(null);
   useEffect(() => {
-
-    setKeyframes('')
+    setKeyframes("");
     const GetProductsFetch = async () => {
       try {
-        const products = await GetProducts()
+        const products = await GetProducts();
 
-        setDataProducts(products)
-
-       
+        setDataProducts(products);
       } catch (error) {
-        console.error
-      }finally{
-      
-          setPreloading(false);
-  
+        console.error;
+      } finally {
+        setPreloading(false);
       }
     };
-GetProductsFetch()
-  }, []); 
+    GetProductsFetch();
+  }, []);
 
   const [idPage, SetidPage] = useState();
-  const ChangePage = (id,page) => {
+  const ChangePage = (id, page) => {
     SetStatePage(page);
     SetidPage(id);
     const GetidProducts = async () => {
@@ -220,15 +205,15 @@ GetProductsFetch()
     GetidProducts();
   };
 
-  const [selectedSub,setSelectedSub]=useState([
-    {id:0,subcategoria:false},
-    {id:1,subcategoria:false},
-    {id:2,subcategoria:false},
-    {id:3,subcategoria:true}
-  ])
- 
+  const [selectedSub, setSelectedSub] = useState([
+    { id: 0, subcategoria: false },
+    { id: 1, subcategoria: false },
+    { id: 2, subcategoria: false },
+    { id: 3, subcategoria: true },
+  ]);
+
   const [dataShoppinCart, setDataShoppinCart] = useState(null);
-  
+
   const ChangeSubSelection = (id) => {
     const updatedSub = selectedSub.map((item) => {
       if (item.id == id) {
@@ -237,53 +222,51 @@ GetProductsFetch()
         return { ...item, subcategoria: false };
       }
     });
-  
-    setSelectedSub(updatedSub); 
+
+    setSelectedSub(updatedSub);
   };
 
-  const RefreshCategory = (id,index)=>{
-    ChangeSubSelection(index)
+  const RefreshCategory = (id, index) => {
+    ChangeSubSelection(index);
     const Getcategory = async () => {
-   
       try {
-   
-        const categoryProducts = await GetCategory(idPage,id)
+        const categoryProducts = await GetCategory(idPage, id);
         setDatacategory(categoryProducts);
-  
       } catch (error) {
-        console.error
-      }finally{
-        const audio = new Audio('/sound/delete.mp3');
+        console.error;
+      } finally {
+        const audio = new Audio("/sound/delete.mp3");
         audio.play();
       }
     };
-    Getcategory()
-  }
-  const buyCart = async ()=>{
-    console.log(dataShoppinCart.producto)
-        try {
-        return await BuyShoppingCart(dataShoppinCart.producto)
-        } catch (error) {
-         console.error
-        }finally{
-          GetshoppingCart()
-          setViewCart(false);
-          setThanksBuy(true)
-          const audio = new Audio('/sound/arigato.mp3');
-          audio.play();
-          setTimeout(() => {
-            setThanksBuy(false)
-          }, 3000);
-        }  
-      };
+    Getcategory();
+  };
+  const buyCart = async () => {
+    console.log(dataShoppinCart.producto);
+    try {
+      return await BuyShoppingCart(dataShoppinCart.producto);
+    } catch (error) {
+      console.error;
+    } finally {
+      GetshoppingCart();
+      setViewCart(false);
+      setThanksBuy(true);
+      const audio = new Audio("/sound/arigato.mp3");
+      audio.play();
+      setTimeout(() => {
+        setThanksBuy(false);
+      }, 3000);
+    }
+  };
 
   const DeleteCart = async (id) => {
     try {
-      return await DeleteShoppingCart(id)
+      return await DeleteShoppingCart(id);
     } catch (error) {
       setMessage(`Error: ${error.message}`);
-    }finally{GetshoppingCart()
-      const audio = new Audio('/sound/delete.mp3');
+    } finally {
+      GetshoppingCart();
+      const audio = new Audio("/sound/delete.mp3");
       audio.play();
     }
   };
@@ -317,16 +300,13 @@ GetProductsFetch()
     };
 
     try {
-     await ShoppingCartAddLess(id,ObjectCart)
-      await GetshoppingCart()
-      const audio = new Audio('/sound/delete.mp3');
+      await ShoppingCartAddLess(id, ObjectCart);
+      await GetshoppingCart();
+      const audio = new Audio("/sound/delete.mp3");
       audio.play();
     } catch (error) {
-      console.error
-    } 
-
-
-   
+      console.error;
+    }
   };
   const router = useRouter();
   const [viewcart, setViewCart] = useState(false);
@@ -338,22 +318,58 @@ GetProductsFetch()
     router.push("/Admin");
   };
 
-  const [thanksbuy,setThanksBuy] = useState(false)
-
-
-
-
+  const [thanksbuy, setThanksBuy] = useState(false);
 
   const [hoveranime, SethoverAnime] = useState({
-    onePunch:false,
-    naruto:false,
-    onepiece:false,
-    furry:false
+    onePunch: false,
+    naruto: false,
+    onepiece: false,
+    furry: false,
   });
+  function useWindowSize() {
+    const [windowSize, setWindowSize] = useState({
+      width: undefined,
+      height: undefined,
+    });
+  
+    useEffect(() => {
+      function handleResize() {
+        setWindowSize({
+          width: window.innerWidth,
+          height: window.innerHeight,
+        });
+      }
+  
+      window.addEventListener("resize", handleResize);
+      handleResize();
+  
+      return () => window.removeEventListener("resize", handleResize);
+    }, []);
+  
+    return windowSize;
+  }
 
+  const windowSize = useWindowSize();
+  const isSmallScreen = windowSize.width <= 1024;
 
+  const handleMouseEnter = (name) => {
+    
+    if (!isSmallScreen) {
+      SethoverAnime(prevState => ({
+        ...prevState,
+        [name]: true,
+      }));
+    }
+  };
 
-
+  const handleMouseLeave = (name) => {
+    if (!isSmallScreen) {
+      SethoverAnime(prevState => ({
+        ...prevState,
+        [name]: false,
+      }));
+    }
+  };
   return (
     <ProductContext.Provider
       value={{
@@ -371,28 +387,38 @@ GetProductsFetch()
         indexCart,
         setIndexCart,
         AddCart,
-       dataproducts, setDataProducts,
-       Preloading, setPreloading,
-       ChangePage,
-       dataproductsforid, setDataProductsforid,
-      
-       datacategory, setDatacategory,
-       RefreshCategory,
-       DeleteCart,
-       dataShoppinCart, setDataShoppinCart,
-       GetshoppingCart,
-       buyCart,
-       AddLess,
-       viewcart, setViewCart,
-       handleClickUser,
-       thanksbuy,setThanksBuy,
-       hoveranime, SethoverAnime,
-       selectedSub,setSelectedSub,
-       ChangeSubSelection,
-       AddCartProduct,
-       addcart,
-       handleClickAdmin
-     
+        dataproducts,
+        setDataProducts,
+        Preloading,
+        setPreloading,
+        ChangePage,
+        dataproductsforid,
+        setDataProductsforid,
+
+        datacategory,
+        setDatacategory,
+        RefreshCategory,
+        DeleteCart,
+        dataShoppinCart,
+        setDataShoppinCart,
+        GetshoppingCart,
+        buyCart,
+        AddLess,
+        viewcart,
+        setViewCart,
+        handleClickUser,
+        thanksbuy,
+        setThanksBuy,
+        hoveranime,
+        SethoverAnime,
+        selectedSub,
+        setSelectedSub,
+        ChangeSubSelection,
+        AddCartProduct,
+        addcart,
+        handleClickAdmin,
+        handleMouseLeave,
+        handleMouseEnter 
       }}
     >
       {children}

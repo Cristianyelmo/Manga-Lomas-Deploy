@@ -1,4 +1,4 @@
-const url = "https://manga-lomas-deploy.vercel.app/api/";
+const url = "http://localhost:3000/api/";
 export const GetSales = async (date) => {
   const response = await fetch(`${url}Sales?fecha=${date}`);
 
