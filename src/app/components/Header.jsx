@@ -159,7 +159,7 @@ export default function Header({ clickHeader }) {
             <p>{dataShoppinCart && dataShoppinCart.totalValue ? dataShoppinCart.totalValue : 0}$</p>
       </div>
           <button className="bg-black p-4 text-white mt-10 w-full" onClick={buyCart}>
-            Realizar Compras
+            Realizar Compra
           </button>
           </>
         ): (<div className="text-black flex flex-col items-center space-y-2 p-4">
