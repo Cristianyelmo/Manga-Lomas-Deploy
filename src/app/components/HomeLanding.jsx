@@ -59,7 +59,7 @@ export default function HomeLanding() {
               src="/imagen/Figuras de Accion-1.webp"
               height={338}
               width={195}
-              className={`absolute sm:w-[150px] lg:w-[210px] right-0 z-40 left-[55%] sm:left-auto  bottom-0  transition-transform duration-300 ease-linear ${
+              className={`absolute sm:w-[150px] lg:w-[210px] right-0 z-30 left-[55%] sm:left-auto  bottom-0  transition-transform duration-300 ease-linear ${
                 hoveranime.furry ? "rotate-6 " : "rotate-0"
               }`}
             />
@@ -67,7 +67,7 @@ export default function HomeLanding() {
               src="/imagen/Figuras de Accion-0.webp"
               height={338}
               width={195}
-              className="absolute sm:w-[150px] lg:w-[210px] right-0 z-30 left-[55%]  sm:left-auto    bottom-0  "
+              className="absolute sm:w-[150px] lg:w-[210px] right-0 z-20 left-[55%]  sm:left-auto    bottom-0  "
             />
             <Image
               src="/imagen/fondoCategory.png"

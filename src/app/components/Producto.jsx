@@ -91,7 +91,7 @@ const {ratingselected} = UserHook()
 
         {dataproductsforid && dataproductsforid.producto.Calificacion.length !== 0 ? dataproductsforid.producto.Calificacion.map((item,index) => (
           <section key={index} className="flex flex-col md:flex-row text-black mt-6 border-black border-[4px] p-4">
-            <div className="flex flex-col items-center md:items-start md:mr-4 mb-4 md:mb-0">
+            <div className="flex flex-col items-center lg:mr-5">
               <Image src="/imagen/perfil.svg" width={50} height={50} />
               <p className="text-center ">{item.usuario.nombre}</p>
             </div>
