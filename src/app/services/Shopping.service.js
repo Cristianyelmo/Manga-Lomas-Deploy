@@ -1,4 +1,4 @@
-const url = "https://manga-lomas-deploy.vercel.app/api/";
+const url = "https://manga-lomas.vercel.app/api/";
 
 export const GetShoppingCart = async () => {
   const response = await fetch(`${url}/ShoppingCart`);
